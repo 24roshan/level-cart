@@ -1,9 +1,9 @@
 services:
-  - type: web_service
+  - type: web
     name: mini-cart-php-fallback
-    env: php
     branch: main
     region: oregon
     plan: free
+    runtime: php
     buildCommand: ""
     startCommand: php -S 0.0.0.0:10000 index.php
