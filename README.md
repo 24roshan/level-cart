@@ -1,49 +1,64 @@
-# Mini ECommerce Cart (Laravel)
+# Mini ECommerce Cart
 
-## Description
-Minimal Laravel application that implements a session-based shopping cart with hardcoded products.
+## Overview
+A session-based shopping cart with three hardcoded products.  
+Built with Laravel 10 (preferred) and includes a plain PHP fallback for quick demo.  
+All cart data is stored in session — no database required.
 
-## Requirements
-- PHP 8.0+
-- Composer
-- Laravel 10+
+---
 
-## Setup Instructions
+## Run Locally (PowerShell – Windows)
 
-1. Clone or unzip this repository:
-```bash
+### Prerequisites
+- **PHP 8.0+** installed  
+- (Optional) [XAMPP](https://www.apachefriends.org/) for Windows PHP runtime  
+- **Composer** (only for Laravel version)  
+
+---
+
+### 1️⃣ Clone the Repository
+```powershell
+git clone https://github.com/24roshan/laravel-cart.git
 cd laravel-cart
-```
-
-2. Install Laravel via Composer (this will create the framework files):
-```bash
+2️⃣ Laravel Version (Preferred)
+powershell
 composer create-project laravel/laravel=10.* . --prefer-dist --no-interaction
-```
-
-3. Copy the provided custom files over (they are already in place if you unzipped this):
-- `app/Http/Controllers/ProductController.php`
-- `app/Http/Controllers/CartController.php`
-- `routes/web.php`
-- `resources/views/layout.blade.php`
-- `resources/views/products.blade.php`
-- `resources/views/cart.blade.php`
-
-4. Ensure session driver is file (default) in `.env` and app key is set:
-```bash
 php artisan key:generate
-```
-
-5. Serve the app:
-```bash
 php artisan serve
-```
+➡ After running the last command, PowerShell will show:
+Starting Laravel development server: http://127.0.0.1:8000
+Open that URL in your browser.
 
-6. Open `http://127.0.0.1:8000` in browser.
+3️⃣ Plain PHP Fallback (No Composer Needed)
+powershell
+& "C:\xampp\php\php.exe" -S localhost:8000
+➡ Then open: http://localhost:8000/index.php in your browser.
 
-## Features
-- List of 3 hardcoded products.
-- Add to cart, update quantity, remove item, clear cart.
-- Checkout button clears cart with thank-you flash message.
-- All cart data stored via Laravel session.
-- RESTful POST routes for modifications.
-- Blade views, no external packages.
+4️⃣ Troubleshooting
+If php is not recognized
+Use the full path in PowerShell:
+
+powershell
+& "C:\xampp\php\php.exe" artisan serve
+or
+powershell
+& "C:\xampp\php\php.exe" -S localhost:8000
+If port 8000 is busy
+Change the port:
+powershell
+php artisan serve --port=8080
+or
+powershell
+& "C:\xampp\php\php.exe" -S localhost:8080
+Features
+3 hardcoded products (Laptop, Smartphone, Headphones)
+
+Add to cart, update quantity, remove, clear cart
+
+Checkout button clears cart with thank-you message
+
+RESTful POST routes (Laravel version)
+
+Blade views (Laravel) / Bootstrap styling (both versions)
+
+Flash messages for success/failure
