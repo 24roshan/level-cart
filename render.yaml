@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: mini-cart-php-fallback
-    branch: main
-    region: oregon
-    plan: free
-    runtime: php
-    buildCommand: ""
-    startCommand: php -S 0.0.0.0:10000 index.php
